@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: erp-gateway
+
+  cloud:
+    gateway:
+      default-filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 5     # 5 requests per second
+            redis-rate-limiter.burstCapacity: 10
+        - name: AddResponseHeader
+          args:
+            name: X-Gateway
+            value: ERP-Gateway
+      discovery:
+        locator:
+          enabled: false  # set true if using Eureka later
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/erp-realm
+          jwk-set-uri: http://localhost:8085/realms/erp-realm/protocol/openid-connect/certs
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
