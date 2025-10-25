@@ -1,0 +1,8 @@
+{
+  "sub": "12345678-90ab-cdef-1234-567890abcdef",
+  "preferred_username": "employee1",
+  "realm_access": {
+    "roles": ["EMPLOYEE"]
+  },
+  "iss": "http://localhost:8085/realms/mahrealm"
+}

@@ -1,6 +1,13 @@
 server:
   port: 8081
 
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    url: /v3/api-docs
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5462/hrdb
@@ -28,6 +35,5 @@ logging:
     org.hibernate.SQL: DEBUG
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 
-# بهترین روش: استفاده از environment variable ها برای password و username
 # spring.datasource.password=${DB_PASSWORD:postgres}
 # spring.datasource.username=${DB_USER:postgres}
