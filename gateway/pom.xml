@@ -9,7 +9,7 @@
   <groupId>com.mah</groupId>
   <artifactId>gateway</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>ERP Gateway</name>
+  <name>gateway</name>
   <description>API Gateway for ERP System (Spring Cloud Gateway + Keycloak)</description>
   <packaging>jar</packaging>
 
